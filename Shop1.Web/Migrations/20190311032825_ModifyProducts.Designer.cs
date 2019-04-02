@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Shop1.Web.Data;
 
 namespace Shop1.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20190311032825_ModifyProducts")]
+    partial class ModifyProducts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,13 +31,13 @@ namespace Shop1.Web.Migrations
 
                     b.Property<bool>("IsAvailabe");
 
-                    b.Property<DateTime?>("LastPurchase");
+                    b.Property<DateTime>("LastPurchase");
 
-                    b.Property<DateTime?>("LastSale");
+                    b.Property<DateTime>("LastSale");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(60);
+                        .HasMaxLength(50);
 
                     b.Property<decimal>("Price");
 
