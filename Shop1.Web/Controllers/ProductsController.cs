@@ -85,7 +85,6 @@ namespace Shop1.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Product product)
         {         
-
             if (ModelState.IsValid)
             {
                 try
