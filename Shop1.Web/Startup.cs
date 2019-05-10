@@ -31,10 +31,10 @@ namespace Shop1.Web
                 cfg.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"));
             });
 
-            services.AddTransient<SeedDb>();
+            services.AddTransient<SeedDb>();            
 
-            services.AddScoped<IRepository, Repository>();
-            
+            services.AddScoped<IRepository, Repository>(); //Repositorio Original
+
 
             services.Configure<CookiePolicyOptions>(options =>
             {
